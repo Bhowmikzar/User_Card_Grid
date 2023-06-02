@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+The code begins by importing the necessary dependencies: React, useState (a React Hook for managing state), axios (a library for making HTTP requests), and styled-components (a library for styling React components with CSS-in-JS).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The code defines several styled components using the styled function from styled-components. These components are used to define the styling for different parts of the user interface.
 
-## Available Scripts
+Container is a styled div component that sets the padding for the entire app.
+Navbar is a styled nav component that represents the navigation bar at the top of the app.
+Button is a styled button component used for the "Get Users" button.
+UserCardGrid is a styled div component that represents the grid container for displaying user cards.
+UserCard is a styled div component that represents an individual user card.
+Loader is a styled div component used for displaying a loading indicator.
+The App function component is defined. Inside the component, state is managed using the useState hook. Two state variables are declared: users to store the fetched user data, and isLoading to track the loading state.
 
-In the project directory, you can run:
+The fetchUsers function is defined as an asynchronous function that fetches user data from the "https://reqres.in/api/users?page=1" endpoint. It sets the loading state to true before making the API request and sets it back to false after the request is completed. The fetched user data is stored in the users state variable.
 
-### `npm start`
+The handleButtonClick function is a callback function triggered when the "Get Users" button is clicked. It calls the fetchUsers function.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The return statement defines the JSX markup for the component's rendered output. The markup is wrapped inside the Container component.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The Navbar component displays a navigation bar with the text "BhowmikzAR" and a "Get Users" button.
+Inside the Navbar component, the "Get Users" button triggers the handleButtonClick function when clicked. It is disabled when the isLoading state is true.
+The conditional rendering logic is used to display either the Loader component (if isLoading is true) or the UserCardGrid component (if isLoading is false).
+When isLoading is true, the Loader component displays the text "Loading..." in the center of the screen.
+When isLoading is false, the UserCardGrid component displays a grid of UserCard components.
+Inside the UserCard components, user data is mapped from the users state and displayed. Each UserCard contains an image, the user's full name, and their email address.
+The App component is exported as the default export of the module.
+In summary, the code fetches user data from an API and displays it in a grid format with some basic styling. When the "Get Users" button is clicked, the user data is fetched, and a loading indicator is displayed until the data is retrieved.
